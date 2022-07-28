@@ -22,9 +22,9 @@ class UserTemplate {
 
     public function sayHello() {
         if($this->status === 'anonymous') {
-            return "Benvenuto $this->name.<br> Sai che se ti registri hai diritto al 20% di sconto sul tuo primo ordine?";
+            return "Benvenuto $this->name.<br> Sai che se ti registri hai diritto al $this->discount% di sconto sul tuo primo ordine?";
         } else {
-            return "Ciao $this->name,<br> Grazie per essere registrato! Hai diritto al 20% di sconto sul tuo primo ordine!";
+            return "Ciao $this->name,<br> Grazie per essere registrato! Hai diritto al $this->discount% di sconto sul tuo primo ordine!";
         } 
     }
 
