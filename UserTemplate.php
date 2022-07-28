@@ -20,12 +20,11 @@ class User {
 
     public function sayHello() {
         if($this->status === 'anonymous') {
-            return "Benvenuto $this->name! Se ti registri avrai diritto al 20% di sconto sul tuo primo ordine!"
+            return "Benvenuto $this->name! Se ti registri avrai diritto al 20% di sconto sul tuo primo ordine!";
         } else {
-            return "Ciao $this->name! Grazie per essere registrato! Hai diritto al 20% di sconto sul tuo primo ordine!"
+            return "Ciao $this->name! Grazie per essere registrato! Hai diritto al 20% di sconto sul tuo primo ordine!";
         } 
     }
-
 }
 
 ?>
