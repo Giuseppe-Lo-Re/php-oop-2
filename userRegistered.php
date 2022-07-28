@@ -7,7 +7,7 @@ class UserRegistered extends UserTemplate {
     public $status = 'registered';
 
     // Override
-    public $discount = 20;
+    protected $discount = 20;
 
 }
 

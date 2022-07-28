@@ -8,11 +8,13 @@ class UserTemplate {
 
     public $email;
 
+    public $prepaidcard;
+
     protected $status;
 
     protected $discount = 0;
 
-    protected $cart = [];
+    public $cart = [];
 
     public function __construct($_name, $_lastname, $_email) {
         $this->name = $_name;
@@ -28,20 +30,33 @@ class UserTemplate {
         } 
     }
 
-    public function putProductInCart($product) {
-        $this->cart[] = $product;
+    public function putProductInCart($products) {
+        foreach($products as $product) {
+            $this->cart[] = $product;
+        }
     }
 
-    public function DoTheTotal() {
-        $Total = 0;
+
+    public function doTheTotal() {
+        $total = 0;
         foreach($this->cart as $product) {
-            $Total += $product->price;
+            $total += $product->price;
         }
 
         // Do the Discount:
-        $Total -= $Total * $this->discount / 100;
+        $total -= $total * $this->discount / 100;
 
-        return $Total;
+        return $total;
+    }
+
+    public function doThePayment() {
+        $paymentOrder = $this->doTheTotal();
+
+        if($this->prepaidcard > $paymentOrder) {
+            return "Pagamento effettuato, grazie per l'acquisto!";
+        } else {
+            return "Il pagamento non è andato a buon fine. Ti preghiamo di riprovare o contattare la banca emettitrice";
+        } 
     }
 
 }
