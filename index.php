@@ -29,7 +29,8 @@ $Kennel_Vounot_Cat->price = 69;
 <?php
 
 echo $Food_Reico_Dog->getInfo();
-
+echo $Game_Trixie_Birds->getInfo();
+echo $Kennel_Vounot_Cat->getInfo();
 ?>
 
     
