@@ -1,8 +1,8 @@
 <?php
 
 require_once __DIR__ . '/ProductTemplate.php';
-require_once __DIR__ . 'UserAnonymous.php';
-require_once __DIR__ . 'userRegistered.php';
+require_once __DIR__ . '/UserAnonymous.php';
+require_once __DIR__ . '/UserRegistered.php';
 
 
 $Food_Reico_Dog = new ProductTemplate('Alimenti','Cani');
@@ -17,10 +17,9 @@ $Kennel_Vounot_Cat = new ProductTemplate('Cucce', 'Gatti');
 $Kennel_Vounot_Cat->brand = 'Vounot';
 $Kennel_Vounot_Cat->price = 69;
 
-$Anonymous = new UserAnonymous('Giuseppe', 'Verdi', 'g.verdi@mail.it');
 
-$Registered = new UserRegistered('Mario', 'Rossi', 'm.rossi@mail.it');
-
+$Registered = new UserRegistered('Giuseppe', 'Verdi', 'g.verdi@mail.it');
+$Anonymous = new UserAnonymous('Mario', 'Rossi', 'm.rossi@mail.it');
 
 ?>
 
@@ -34,7 +33,51 @@ $Registered = new UserRegistered('Mario', 'Rossi', 'm.rossi@mail.it');
 </head>
 <body>
 
-    <h1> Il Mondo degli Animali</h1>
+    <h1> 
+        Il Mondo degli Animali
+    </h1>
+
+    <br>
+    <br>
+
+    <div>
+        <?php
+        
+            echo $Registered->sayHello();
+        ?>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+
+        Qui trovi una panoramica dei nostri prodotti più venduti: 
+        <br>
+        <br>
+
+        <?php
+        
+            echo $Food_Reico_Dog->getInfo();
+        ?>
+
+        <br>
+
+        <?php
+        
+            echo $Game_Trixie_Birds->getInfo();
+        ?>
+
+        <br>
+
+        <?php
+        
+            echo $Kennel_Vounot_Cat->getInfo();
+        ?>
+    </div>
+    
+
+
 <?php
 
 

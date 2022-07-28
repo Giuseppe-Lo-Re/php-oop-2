@@ -8,11 +8,11 @@ class UserTemplate {
 
     public $email;
 
-    public $status;
+    protected $status;
 
-    public $discount = 0;
+    protected $discount = 0;
 
-    public $cart = [];
+    protected $cart = [];
 
     public function __construct($_name, $_lastname, $_email) {
         $this->name = $_name;
@@ -22,11 +22,28 @@ class UserTemplate {
 
     public function sayHello() {
         if($this->status === 'anonymous') {
-            return "Benvenuto $this->name! Se ti registri avrai diritto al 20% di sconto sul tuo primo ordine!";
+            return "Benvenuto $this->name.<br> Sai che se ti registri hai diritto al 20% di sconto sul tuo primo ordine?";
         } else {
-            return "Ciao $this->name! Grazie per essere registrato! Hai diritto al 20% di sconto sul tuo primo ordine!";
+            return "Ciao $this->name,<br> Grazie per essere registrato! Hai diritto al 20% di sconto sul tuo primo ordine!";
         } 
     }
+
+    public function putProductInCart($product) {
+        $this->cart[] = $product;
+    }
+
+    public function DoTheTotal() {
+        $Total = 0;
+        foreach($this->cart as $product) {
+            $Total += $product->price;
+        }
+
+        // Do the Discount:
+        $Total -= $Total * $this->discount / 100;
+
+        return $Total;
+    }
+
 }
 
 ?>

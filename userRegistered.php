@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/UserTemplate.php';
 
-class Registred extends UserTemplate {
+class UserRegistered extends UserTemplate {
 
     public $status = 'registered';
 
