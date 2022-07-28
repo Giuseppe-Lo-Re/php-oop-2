@@ -1,6 +1,6 @@
 <?php
 
-class Product {
+class ProductTemplate {
     
     public $category;
 

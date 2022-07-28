@@ -5,22 +5,21 @@ require_once __DIR__ . 'UserAnonymous.php';
 require_once __DIR__ . 'userRegistered.php';
 
 
-$Food_Reico_Dog = new Product('Alimenti','Cani');
+$Food_Reico_Dog = new ProductTemplate('Alimenti','Cani');
 $Food_Reico_Dog->brand = 'Reico';
 $Food_Reico_Dog->price = 49;
 
-$Game_Trixie_Birds = new Product('Giochi', 'Uccelli');
+$Game_Trixie_Birds = new ProductTemplate('Giochi', 'Uccelli');
 $Game_Trixie_Birds->brand = 'Trixie';
 $Game_Trixie_Birds->price = 16;
 
-$Kennel_Vounot_Cat = new Product('Cucce', 'Gatti');
+$Kennel_Vounot_Cat = new ProductTemplate('Cucce', 'Gatti');
 $Kennel_Vounot_Cat->brand = 'Vounot';
 $Kennel_Vounot_Cat->price = 69;
 
-$Anonymous = new Anonymous('Giuseppe', 'Verdi', 'g.verdi@mail.it');
+$Anonymous = new UserAnonymous('Giuseppe', 'Verdi', 'g.verdi@mail.it');
 
-
-$Registered = new User('Mario', 'Rossi', 'm.rossi@mail.it');
+$Registered = new UserRegistered('Mario', 'Rossi', 'm.rossi@mail.it');
 
 
 ?>
