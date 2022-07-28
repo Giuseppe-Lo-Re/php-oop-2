@@ -10,16 +10,18 @@ class Product {
 
     public $price;
 
-    public function __construct($_category, $whichAnimal) {
+    public function __construct($_category, $_whichAnimal) {
         $this->category = $_category;
         $this->whichAnimal = $_whichAnimal;
     }
 
     public function getInfo() {
-        return "Categoria: $this->$category <br> 
+        return "Categoria: $this->category <br> 
                 Marca: $this->brand <br> 
-                Destinato a: $this->$whichAnimal <br> 
-                Prezzo: $this->$price";
+                Destinato a: $this->whichAnimal <br> 
+                Prezzo: $this->price euro<br>
+                <br>
+                <br>";
     }
 }
 ?>

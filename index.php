@@ -1,21 +1,27 @@
 <?php
 
 require_once __DIR__ . '/ProductTemplate.php';
-require_once __DIR__ . '/UserTemplate.php';
+require_once __DIR__ . 'UserAnonymous.php';
+require_once __DIR__ . 'userRegistered.php';
 
-$Food_Reico_Dog = new ProductTemplate('Alimenti', 'Cani');
+
+$Food_Reico_Dog = new Product('Alimenti','Cani');
 $Food_Reico_Dog->brand = 'Reico';
 $Food_Reico_Dog->price = 49;
 
-$Game_Trixie_Birds = new ProductTemplate('Giochi', 'Uccelli');
+$Game_Trixie_Birds = new Product('Giochi', 'Uccelli');
 $Game_Trixie_Birds->brand = 'Trixie';
 $Game_Trixie_Birds->price = 16;
 
-$Kennel_Vounot_Cat = new ProductTemplate('Cucce', 'Gatti');
+$Kennel_Vounot_Cat = new Product('Cucce', 'Gatti');
 $Kennel_Vounot_Cat->brand = 'Vounot';
 $Kennel_Vounot_Cat->price = 69;
 
-$Anonymous = new UserTemplate()
+$Anonymous = new Anonymous('Giuseppe', 'Verdi', 'g.verdi@mail.it');
+
+
+$Registered = new User('Mario', 'Rossi', 'm.rossi@mail.it');
+
 
 ?>
 
@@ -29,11 +35,10 @@ $Anonymous = new UserTemplate()
 </head>
 <body>
 
+    <h1> Il Mondo degli Animali</h1>
 <?php
 
-echo $Food_Reico_Dog->getInfo();
-echo $Game_Trixie_Birds->getInfo();
-echo $Kennel_Vounot_Cat->getInfo();
+
 ?>
 
     

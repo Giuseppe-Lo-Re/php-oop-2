@@ -10,7 +10,9 @@ class User {
 
     public $status;
 
-    public $discount;
+    public $discount = 0;
+
+    public $cart = [];
 
     public function __construct($_name, $_lastname, $_email) {
         $this->name = $_name;
