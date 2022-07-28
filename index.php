@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/ProductTemplate.php';
+require_once __DIR__ . '/UserTemplate.php';
 
 $Food_Reico_Dog = new ProductTemplate('Alimenti', 'Cani');
 $Food_Reico_Dog->brand = 'Reico';
@@ -13,6 +14,8 @@ $Game_Trixie_Birds->price = 16;
 $Kennel_Vounot_Cat = new ProductTemplate('Cucce', 'Gatti');
 $Kennel_Vounot_Cat->brand = 'Vounot';
 $Kennel_Vounot_Cat->price = 69;
+
+$Anonymous = new UserTemplate()
 
 ?>
 
