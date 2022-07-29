@@ -1,6 +1,10 @@
 <?php
 
+require_once __DIR__ . '/UserCode.php';
+
 class UserTemplate {
+
+    use UserCode;
 
     public $name;
 
@@ -36,7 +40,6 @@ class UserTemplate {
         }
     }
 
-
     public function doTheTotal() {
         $total = 0;
         foreach($this->cart as $product) {
@@ -49,13 +52,13 @@ class UserTemplate {
         return $total;
     }
 
-    public function doThePayment() {
+    public function doThePayment($prepaidcard) {
         $paymentOrder = $this->doTheTotal();
 
-        if($this->prepaidcard > $paymentOrder) {
-            return "Pagamento effettuato, grazie per l'acquisto!";
+        if($this->prepaidcard < $paymentOrder) {
+            throw new Exception("Il pagamento non è andato a buon fine. Ti preghiamo di riprovare o contattare la banca emettitrice");
         } else {
-            return "Il pagamento non è andato a buon fine. Ti preghiamo di riprovare o contattare la banca emettitrice";
+            return "ok";
         } 
     }
 

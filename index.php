@@ -22,6 +22,16 @@ $Giuseppe = new UserRegistered('Giuseppe', 'Verdi', 'g.verdi@mail.it');
 $Giuseppe->prepaidcard = new PrepaidCard();
 $Mario = new UserAnonymous('Mario', 'Rossi', 'm.rossi@mail.it');
 
+
+try {
+    if($Giuseppe->doThePayment($prepaidcard) === 'ok') {
+        echo "Pagamento effettuato, grazie per l'acquisto!";
+    }
+} catch(Exception $e) {
+    erro_log($e->getMessagge());
+    echo "Il pagamento non è andato a buon fine. Ti preghiamo di riprovare o contattare la banca emettitrice";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -83,14 +93,6 @@ $Mario = new UserAnonymous('Mario', 'Rossi', 'm.rossi@mail.it');
             echo $Kennel_Vounot_Cat->getInfo();
         ?>
     </div>
-    
 
-
-<?php
-
-
-?>
-
-    
 </body>
 </html>
